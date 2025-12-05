@@ -138,6 +138,20 @@ const Home: NextPage = () => {
             ))}
           </div>
 
+          <div className="tools-section">
+            <h2 className="tools-title">Tools</h2>
+            <div className="tools-grid">
+              <a
+                href="/Quick_Business_Analysis.md"
+                download
+                className="tool-button"
+              >
+                <span className="tool-icon">📊</span>
+                <span className="tool-text">Quick Business Analysis</span>
+              </a>
+            </div>
+          </div>
+
           <footer className="footer">
             <p>Created by Fuller Horizons LLC</p>
           </footer>
@@ -207,6 +221,51 @@ const Home: NextPage = () => {
             color: #94a3b8;
             font-size: 0.9rem;
             margin: 0;
+          }
+          .tools-section {
+            margin-top: 3rem;
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+          }
+          .tools-title {
+            color: #fff;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+          }
+          .tools-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+          }
+          .tool-button {
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 1.25rem 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+          }
+          .tool-button:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+          }
+          .tool-icon {
+            font-size: 1.5rem;
+          }
+          .tool-text {
+            font-size: 1rem;
           }
           .footer {
             margin-top: 3rem;
