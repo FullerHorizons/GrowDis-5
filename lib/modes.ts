@@ -268,40 +268,10 @@ export function getModeConfig(mode: Mode): ModeConfig {
 
 export function getStartOfChatMessage(mode: Mode): string {
   const config = modes[mode];
-  const date = new Date().toLocaleDateString('en-US', { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  });
   
-  const rule14Status = mode === 'support'
-    ? 'Rule 14 is relaxed in this mode, but I will not validate falsehoods.'
-    : mode === 'creative'
-    ? 'Rule 14 applies when asserting facts; creative ideation is unrestricted.'
-    : 'Rule 14: Present Reality Without Validation is fully active.';
-
-  const modeDescriptions: Record<Mode, string> = {
-    executive: 'I will provide strategic analysis using multi-frame reasoning: surface summary, structural breakdown, scenario mapping, second-order effects, and strategic recommendations.',
-    direct: 'I will deliver concise responses (3-5 sentences) with clear, actionable directives. No qualifiers or unnecessary elaboration.',
-    research: 'I will synthesise information from authoritative, technical, practical, and historical sources with citations and triangulated findings.',
-    creative: 'I will encourage brainstorming and ideation using trend-pattern projection across past, present, and future patterns.',
-    blackflag: 'I will apply adversarial diagnostics: identifying failure points, attacking weak links, proposing countermeasures, and rebuilding claims stronger.',
-    support: 'I will provide empathetic guidance using emotional truth calibration while maintaining accountability and offering concrete next steps.'
-  };
-
   return `Welcome to GrowDIS v5.0
 
-START-OF-CHAT PROTOCOL
-----------------------
-Date: ${date}
 Mode: ${config.icon} ${config.name}
-
-${modeDescriptions[mode]}
-
-ACTIVE CONSTRAINTS:
-${rule14Status}
-Self-Critique Pass (SCP-1) and Meta-Reasoning Overlay are active.
 
 What would you like to accomplish today?`;
 }
